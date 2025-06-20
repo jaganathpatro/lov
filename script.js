@@ -314,25 +314,25 @@
         }
 
         // Initialize typing effect after loading
-        setTimeout(() => {
-            const heroTitle = document.querySelector('.hero h1');
-            const heroSubtitle = document.querySelector('.hero p');
+        // setTimeout(() => {
+        //     const heroTitle = document.querySelector('.hero h1');
+        //     const heroSubtitle = document.querySelector('.hero p');
             
-            if (heroTitle && heroSubtitle) {
-                const originalTitle = heroTitle.textContent;
-                const originalSubtitle = heroSubtitle.textContent;
+        //     if (heroTitle && heroSubtitle) {
+        //         const originalTitle = heroTitle.textContent;
+        //         const originalSubtitle = heroSubtitle.textContent;
                 
-                heroTitle.style.opacity = '1';
-                heroSubtitle.style.opacity = '1';
+        //         heroTitle.style.opacity = '1';
+        //         heroSubtitle.style.opacity = '1';
                 
-                setTimeout(() => {
-                    typeWriter(heroTitle, originalTitle, 150);
-                    setTimeout(() => {
-                        typeWriter(heroSubtitle, originalSubtitle, 80);
-                    }, originalTitle.length * 150 + 500);
-                }, 2000);
-            }
-        }, 1500);
+        //         setTimeout(() => {
+        //             typeWriter(heroTitle, originalTitle, 150);
+        //             setTimeout(() => {
+        //                 typeWriter(heroSubtitle, originalSubtitle, 80);
+        //             }, originalTitle.length * 150 + 500);
+        //         }, 2000);
+        //     }
+        // }, 1500);
 
         // Add resize observer for responsive adjustments
         if (window.ResizeObserver) {
