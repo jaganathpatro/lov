@@ -62,10 +62,11 @@
         });
 
         // Mobile navigation toggle
-        document.getElementById('navToggle').addEventListener('click', function() {
-            this.classList.toggle('active');
-            document.getElementById('nav').classList.toggle('active');
-        });
+ document.getElementById('navToggle').addEventListener('click', function() {
+        this.classList.toggle('active');
+        document.getElementById('nav').classList.toggle('active');
+        document.body.classList.toggle('nav-open'); // Prevent background scrolling
+    });
 
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -85,13 +86,26 @@
             });
         });
 
-        // Back to top button
-        document.getElementById('backToTop').addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            // Enhanced Back to Top Button
+    const backToTop = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', function() {
+        backToTop.classList.toggle('visible', window.pageYOffset > 500);
+        
+        // Adjust for mobile keyboard if needed
+        if (window.innerHeight + window.scrollY < document.body.offsetHeight) {
+            backToTop.style.bottom = '20px';
+        } else {
+            backToTop.style.bottom = 'calc(20px + env(safe-area-inset-bottom))';
+        }
+    });
+
+    backToTop.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
         });
+    })
 
         // Enhanced Intersection Observer for animations
         const observer = new IntersectionObserver((entries) => {
@@ -189,10 +203,10 @@
             let loveScore = 0;
             
             // Count vowels and love letters
-            const loveLetters = ['l', 'o', 'v', 'e', 't', 'r', 'u'];
+            const loveLetters = ['s', 'j' ,'u', 'k', 's' ,'j','h', 'a', 'n', 't', 'r' ,'e' , 's' , 'h' ,'m' ,'i'];
             for (let letter of combinedNames) {
                 if (loveLetters.includes(letter)) {
-                    loveScore += 5;
+                    loveScore += 15;
                 } else if ('aeiou'.includes(letter)) {
                     loveScore += 3;
                 } else {
@@ -314,25 +328,25 @@
         }
 
         // Initialize typing effect after loading
-        // setTimeout(() => {
-        //     const heroTitle = document.querySelector('.hero h1');
-        //     const heroSubtitle = document.querySelector('.hero p');
+        setTimeout(() => {
+            const heroTitle = document.querySelector('.hero h1');
+            const heroSubtitle = document.querySelector('.hero p');
             
-        //     if (heroTitle && heroSubtitle) {
-        //         const originalTitle = heroTitle.textContent;
-        //         const originalSubtitle = heroSubtitle.textContent;
+            if (heroTitle && heroSubtitle) {
+                const originalTitle = heroTitle.textContent;
+                const originalSubtitle = heroSubtitle.textContent;
                 
-        //         heroTitle.style.opacity = '1';
-        //         heroSubtitle.style.opacity = '1';
+                heroTitle.style.opacity = '1';
+                heroSubtitle.style.opacity = '1';
                 
-        //         setTimeout(() => {
-        //             typeWriter(heroTitle, originalTitle, 150);
-        //             setTimeout(() => {
-        //                 typeWriter(heroSubtitle, originalSubtitle, 80);
-        //             }, originalTitle.length * 150 + 500);
-        //         }, 2000);
-        //     }
-        // }, 1500);
+                setTimeout(() => {
+                    typeWriter(heroTitle, originalTitle, 150);
+                    setTimeout(() => {
+                        typeWriter(heroSubtitle, originalSubtitle, 80);
+                    }, originalTitle.length * 150 + 500);
+                }, 2000);
+            }
+        }, 1500);
 
         // Add resize observer for responsive adjustments
         if (window.ResizeObserver) {

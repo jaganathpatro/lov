@@ -171,89 +171,7 @@
             text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }
 
-        .hero {
-    min-height: 100vh; /* Changed from height to min-height */
-    background: rgba(102, 126, 234, 0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    position: relative;
-    overflow: hidden;
-    perspective: 1000px;
-    padding: 2rem; /* Added padding for better spacing */
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(circle at 30% 20%, rgba(255,255,255,0.15) 0%, transparent 50%),
-        radial-gradient(circle at 70% 80%, rgba(255,255,255,0.15) 0%, transparent 50%),
-        linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, transparent 100%);
-    animation: shimmer 6s ease-in-out infinite alternate;
-}
-
-@keyframes shimmer {
-    0% { opacity: 0.3; }
-    50% { opacity: 0.7; }
-    100% { opacity: 0.3; }
-}
-
-.hero-content {
-    z-index: 2;
-    position: relative;
-    max-width: 800px;
-    padding: 0 2rem;
-    transform-style: preserve-3d;
-}
-
-.hero h1 {
-    font-family: 'Dancing Script', cursive;
-    font-size: clamp(2.5rem, 8vw, 6.5rem); /* Adjusted for smaller screens */
-    margin-bottom: 1.5rem;
-    animation: fadeInUp 1s ease-out;
-    text-shadow: 
-        2px 2px 4px rgba(0,0,0,0.2),
-        0 0 20px rgba(255,255,255,0.2);
-    font-weight: 700;
-    letter-spacing: 2px;
-    background: linear-gradient(to right, #fff, #ffcce6);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.hero p {
-    font-size: clamp(1.2rem, 3vw, 2rem); /* Adjusted for smaller screens */
-    margin-bottom: 2.5rem;
-    animation: fadeInUp 1s ease-out 0.5s both;
-    font-weight: 300;
-    letter-spacing: 1.5px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-}
-
-/* Media Queries for Mobile */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: clamp(2rem, 6vw, 5rem); /* Further adjust for mobile */
-    }
-
-    .hero p {
-        font-size: clamp(1rem, 3vw, 1.5rem); /* Further adjust for mobile */
-    }
-
-    .hero-content {
-        padding: 0 1rem; /* Reduce padding on mobile */
-    }
-}
-
-
+        
         /* Enhanced Button */
         .btn {
             display: inline-block;
@@ -438,10 +356,10 @@
             animation: pulse 2s infinite;
         }
 
-        @keyframes pulse {
+        /* @keyframes pulse {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.3); }
-        }
+        } */
 
         /* Enhanced Message from Heart */
         .heart-message {
