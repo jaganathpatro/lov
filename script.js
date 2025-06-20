@@ -1,11 +1,11 @@
-       // Loading screen
+// Loading screen
         window.addEventListener('load', function() {
             setTimeout(function() {
                 document.getElementById('loading').classList.add('hidden');
             }, 1500);
         });
 
-        // Enhanced floating hearts animation
+        // Enhanced floating hearts animation for background
         function createFloatingHeart() {
             const heartsContainer = document.getElementById('floating-hearts');
             const heart = document.createElement('div');
@@ -15,20 +15,20 @@
             heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
             
             heart.style.left = Math.random() * 100 + '%';
-            heart.style.animationDelay = Math.random() * 2 + 's';
-            heart.style.animationDuration = (Math.random() * 4 + 5) + 's';
+            heart.style.animationDelay = Math.random() * 5 + 's';
+            heart.style.animationDuration = (Math.random() * 10 + 10) + 's';
             heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
-            heart.style.opacity = Math.random() * 0.5 + 0.5;
+            heart.style.opacity = Math.random() * 0.3 + 0.2;
             
             heartsContainer.appendChild(heart);
             
             setTimeout(() => {
                 heart.remove();
-            }, 10000);
+            }, 20000);
         }
 
-        // Create floating hearts periodically
-        setInterval(createFloatingHeart, 500);
+        // Create floating hearts periodically (more spaced out for background)
+        setInterval(createFloatingHeart, 800);
 
         // Navigation show/hide on scroll
         let lastScrollTop = 0;
@@ -346,4 +346,3 @@
             
             resizeObserver.observe(document.body);
         }
-   
