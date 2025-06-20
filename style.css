@@ -1199,3 +1199,11 @@
             opacity: 1;
             transform: translate(-50%, -50%) scale(1);
         }
+
+         .navbar {
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100%;
+         z-index: 1000; /* Keeps it above other content */
+     }
