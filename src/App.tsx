@@ -272,7 +272,7 @@ function App() {
     <div className={`h-64 bg-gradient-to-br ${photo.gradient} flex items-center justify-center text-6xl text-white/90 relative overflow-hidden`}>
       {/* Replace this with your image */}
       <img 
-        src="public/first_date" 
+        src="public/first_date.jpg" 
         alt={photo.title}
         className="w-full h-full object-cover"
       />
