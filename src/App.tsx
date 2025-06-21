@@ -262,6 +262,27 @@ function App() {
         </div>
       </section>
 
+      // Photo Gallery Section
+{[
+  { icon: '📸', title: 'Our First Date', gradient: 'from-pink-400 to-rose-400' },
+  { icon: '💕', title: 'First Kiss', gradient: 'from-purple-400 to-pink-400' },
+  // ... more photos
+].map((photo, index) => (
+  <div key={index} className="...">
+    <div className={`h-64 bg-gradient-to-br ${photo.gradient} flex items-center justify-center text-6xl text-white/90 relative overflow-hidden`}>
+      {/* Replace this with your image */}
+      <img 
+        src="public/first_date" 
+        alt={photo.title}
+        className="w-full h-full object-cover"
+      />
+    </div>
+    <div className="p-6 text-center">
+      <h3 className="text-lg font-semibold text-gray-700">{photo.title}</h3>
+    </div>
+  </div>
+))}
+
       {/* Timeline */}
       <section id="timeline" className="py-20 px-4">
         <div className="max-w-4xl mx-auto">
